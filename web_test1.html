@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>고양이 체중 변화 🐾</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: sans-serif; text-align: center; }
+    canvas { margin: 40px auto; max-width: 700px; }
+  </style>
+</head>
+<body>
+  <h2>🐱 CAT1 - 김사랑 체중 변화</h2>
+  <canvas id="cat1Chart"></canvas>
+
+  <h2>🐱 CAT2 - 이덩이 체중 변화</h2>
+  <canvas id="cat2Chart"></canvas>
+
+  <script>
+    // ▶ CAT1 - 김사랑
+    const cat1Data = {
+      labels: ['2025-03-01','2025-03-02','2025-03-03','2025-03-04','2025-03-05','2025-03-06','2025-03-07','2025-03-08','2025-03-09','2025-03-10'],
+      datasets: [{
+        label: '김사랑',
+        data: [4.1, 4.3, 4.5, 4.2, 4.6, 4.8, 4.7, 4.9, 5.0, 4.85],
+        borderColor: 'pink',
+        backgroundColor: 'rgba(255, 192, 203, 0.2)',
+        tension: 0.3
+      }]
+    };
+
+    // ▶ CAT2 - 이덩이
+    const cat2Data = {
+      labels: ['2025-03-01','2025-03-02','2025-03-03','2025-03-04','2025-03-05','2025-03-06','2025-03-07','2025-03-08','2025-03-09','2025-03-10'],
+      datasets: [{
+        label: '이덩이',
+        data: [8.0, 8.1, 8.05, 8.2, 8.3, 8.25, 8.4, 8.35, 8.5, 8.45],
+        borderColor: 'orange',
+        backgroundColor: 'rgba(255, 165, 0, 0.2)',
+        tension: 0.3
+      }]
+    };
+
+    new Chart(document.getElementById('cat1Chart'), {
+      type: 'line',
+      data: cat1Data,
+      options: { responsive: true }
+    });
+
+    new Chart(document.getElementById('cat2Chart'), {
+      type: 'line',
+      data: cat2Data,
+      options: { responsive: true }
+    });
+  </script>
+</body>
+</html>
